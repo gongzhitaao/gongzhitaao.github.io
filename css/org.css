@@ -1,0 +1,48 @@
+#content {
+    width: 720px;
+}
+
+/* from github */
+code {
+    margin: auto 2px;
+    padding: 0px 5px 2px;
+    border: 1px solid #dddddd;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    font-family: Monaco, "DejaVu Sans Mono", "Courier New", monospace;
+    font-size: 13px;
+    color: #666666;
+    background: #f8f8f8;
+}
+
+blockquote {
+    font-style: italic;
+    margin: 40px 1em;
+}
+
+#postamble {
+    border-top: 1px solid black;
+    font-size: small;
+    padding-top: 2em;
+    margin: 3em 0;
+}
+
+#postamble p {
+    margin: 0;
+}
+
+#postamble .creator {
+    float: right;
+}
+
+#postamble .date {
+    color: grey;
+}
+
+#postamble cv {
+    text-align: center;
+}
