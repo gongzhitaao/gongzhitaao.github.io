@@ -5,8 +5,9 @@
 #+HTML_HEAD: <script type="text/javascript" src="script.js"></script>
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="/css/normalize.css"/>
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css"/>
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="/css/org.css"/>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="/css/font.css"/>
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="/css/style.css"/>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="/css/org.css"/>
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="style.css"/>
 #+OPTIONS: num:nil toc:nil
 

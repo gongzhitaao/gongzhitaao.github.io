@@ -5,5 +5,5 @@
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="/css/style.css"/>
 #+OPTIONS: num:nil toc:nil
 
-[[http:/game_of_life][Game of life]]
-[[http:/game_of_life][file:./img/game_of_life.png]]
+[[file:game_of_life][Game of life]]
+[[file:game_of_life][file:./img/game_of_life.png]]
