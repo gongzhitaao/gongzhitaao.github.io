@@ -1,15 +1,18 @@
+@import url(http://fonts.googleapis.com/css?family=Play:400,700&subset=latin,greek);
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif:700,700italic);
 
 html {
-    font: normal normal normal 16px/2em 'Ubuntu';
+    font: normal normal normal 16px/2em 'Play';
     color: #444
 }
 
 a {
-    color: darkgreen;
+    color: #527d9a;
     text-decoration: none;
 }
 
 a:hover {
+    color: #003355;
     border-bottom: 1px dotted;
 }
 
