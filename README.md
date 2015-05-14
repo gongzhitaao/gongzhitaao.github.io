@@ -1,4 +1,1 @@
-Homepage
-========
-
-Source for http://gongzhitaao.org .
+source for [gongzhitaao.org](gongzhitaao.org).
