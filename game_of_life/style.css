@@ -1,0 +1,51 @@
+div.demo0 {
+    width: 960px;
+    margin: 50px auto;
+}
+
+dev.demo0:after {
+    clear: both;
+}
+
+.demo0 .fig {
+    position: relative;
+    width: 210px;
+    float: left;
+    margin-right: 10px;
+    margin: auto 10px 40px auto;
+}
+
+.demo0 .fig span {
+    font-size: small;
+}
+
+.demo0 .btn {
+    position: absolute;
+    right: 0;
+    bottom: 35px;
+}
+
+.demo0 button {
+    font-size: small;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: solid 1px #ccc;
+    color: #333;
+    background: rgba(255, 255, 255, .5);
+}
+
+.demo0 button[disabled] {
+    cursor: default;
+    opacity: .5;
+}
+
+.demo1 pre.example {
+    height: 2empx;
+    float: left;
+    width: 180px;
+}
+
+.demo1 {
+    overflow: auto;
+}

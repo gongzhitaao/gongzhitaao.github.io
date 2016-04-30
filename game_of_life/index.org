@@ -1,0 +1,235 @@
+#+TITLE: Game of Life
+#+HTML_HEAD: <script type="text/javascript" src="/js/d3.v3.min.js"></script>
+#+HTML_HEAD: <script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script>
+#+HTML_HEAD: <script src="https://gongzhitaao.github.io/lifejs/js/life.js"></script>
+#+HTML_HEAD: <script type="text/javascript" src="script.js"></script>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="/css/normalize.css"/>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css"/>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="/css/font.css"/>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="/css/style.css"/>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="/css/org.css"/>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="style.css"/>
+#+OPTIONS: num:nil toc:nil
+
+#+BEGIN_QUOTE
+1. Live cell with fewer than two live neighbors dies of loneliness.
+2. Live cell with two or three live neighbors lives on.
+3. Live cell with more than three live neighbors dies of crowding.
+4. Dead cell with exactly three live neighbors comes to life.
+#+END_QUOTE
+
+#+BEGIN_HTML
+<div class="demo0">
+
+<div id="fig0" class="fig">
+<canvas width="210px" height="210px"></canvas>
+<span width="210px">All die of loneliness</span>
+<div class="btn">
+<button type="button"><i class="fa fa-play"></i></button>
+<button type="button"><i class="fa fa-stop"></i></button>
+<button type="button"><i class="fa fa-step-forward"></i></button>
+</div>
+</div>
+
+<div id="fig1" class="fig">
+<canvas width="210px" height="210px"></canvas>
+<span width="210px">A still pattern called <a href="http://www.conwaylife.com/wiki/Loaf">Loaf</a></span>
+<div class="btn">
+<button type="button"><i class="fa fa-play"></i></button>
+<button type="button"><i class="fa fa-stop"></i></button>
+<button type="button"><i class="fa fa-step-forward"></i></button>
+</div>
+</div>
+
+<div id="fig2" class="fig">
+<canvas width="210px" height="210px"></canvas>
+<span width="210px">An oscillator called <a href="http://www.conwaylife.com/wiki/Toad">Toad</a></span>
+<div class="btn">
+<button type="button"><i class="fa fa-play"></i></button>
+<button type="button"><i class="fa fa-stop"></i></button>
+<button type="button"><i class="fa fa-step-forward"></i></button>
+</div>
+</div>
+
+<div id="fig3" class="fig">
+<canvas width="210px" height="210px"></canvas>
+<span width="210px">A wrapped glider called <a href="http://www.conwaylife.com/wiki/Glider">Spaceship</a></span>
+<div class="btn">
+<button type="button"><i class="fa fa-play"></i></button>
+<button type="button"><i class="fa fa-stop"></i></button>
+<button type="button"><i class="fa fa-step-forward"></i></button>
+</div>
+</div>
+
+</div>
+#+END_HTML
+
+This is the evolving rule of [[http://en.wikipedia.org/wiki/Conway's_Game_of_Life][Conway's Game of Life]].  The classic
+universe of Game of Life is an infinite 2D grid.  Each cell evolves to
+the next generation according to certain rules /*simultaneously*/.
+The evolving process of Game of Life is completely determined by its
+
+- evolving rules :: who survives, who dies and who rebirths, and
+- initial pattern :: each cell is initially live or dead.
+
+The article introduces the basic notations and formats used in Game of
+Life in the hope that it might be of some help to develop your own
+Game of Life simulator.  Enjoy :)
+
+* Evolving Rules
+
+The above rule is described by =B3/S23=:
+
+#+BEGIN_ASIDE
+The number of neighbors is at most 4 for square grid and 6 for
+hexagonal grid.
+#+END_ASIDE
+
+- a cell is /*B*/-orn if it has exactly 3 neighbors,
+- it /*S*/-tays alive if it has 2 or 3 neighbors,
+- it dies otherwise.
+
+Sometimes, the rule could be shorten to =23/3=, whose interpretation
+is =S23/B3=.
+
+* Patterns
+
+/Four/ common and easy-to-read formats are introduced in this section,
+/*R*-un *L*-ength *E*-ncoded (RLE)/, /plaintext/, /Life1.5/ and
+/Life1.6/.  Only the pattern encoding scheme is explained here, each
+format has its own rules to record other information like author,
+date, comments and etc.  More formats and detailed information could
+be found at [[http://www.conwaylife.com/wiki/Category:File_formats][Life Wiki]] and [[http://www.mirekw.com/ca/ca_files_formats.html][MCell]].
+
+** Run Length Encoded
+
+The pattern is encoded as a sequence of =<count><tag>=, where
+=<count>= is the number of occurrences of =<tag>=.  =<tag>= could be
+one of
+
+#+BEGIN_ASIDE
+Quoted from [[http://www.conwaylife.com/wiki/Run_Length_Encoded][LifeWiki:RLE]].
+#+END_ASIDE
+
+1. *b* - dead cell
+2. *o* - live cell
+3. *$* - end of line
+
+Spaces between =<count><tag>= items is allowed, except that carriage
+returns and line feeds are not recommended.  Spaces between =<count>=
+and =<tag>= are not allowed.
+
+Dead cells at the end of the lines are omitted.
+
+Usually lines in the RLE format must not exceed 70 characters and all
+in lower cases.  RLE readers that cannot handle more than two states
+should treat all letters other than =b= (and perhaps =B=) as
+equivalent to =o=.
+
+An =!= is placed at the end of the RLE format, and anything after that
+is ignored.
+
+The RLE patterns for the above four figures are, from left to right,
+=o2bo3$o2bo!=, =b2ob$o2bo$bobo$2bo!=, =b3o$3o!= and =bob$2bo$3o!=
+respectively.
+
+** Plain text
+
+Simply put, dead cells are represented as =.= and live cells =O=
+(capital =o=).  For example, plaintext format for the above figures
+are:
+
+#+BEGIN_HTML
+<div class="demo1">
+#+END_HTML
+
+#+BEGIN_EXAMPLE
+O..O
+....
+....
+O..O
+#+END_EXAMPLE
+#+BEGIN_EXAMPLE
+.OO.
+O..O
+.O.O
+..O.
+#+END_EXAMPLE
+#+BEGIN_EXAMPLE
+
+
+.OOO
+OOO.
+#+END_EXAMPLE
+#+BEGIN_EXAMPLE
+.O.
+..O
+OOO
+#+END_EXAMPLE
+
+#+BEGIN_HTML
+</div>
+#+END_HTML
+
+** Life1.5
+
+Similar to plaintext format, the only difference is it uses =*=
+(asterisks) instead of =O= (capital =o=) to represent live cells.
+
+** Life1.6
+
+Pattern in life1.6 format consists of sequences of lines of =x y=,
+denoting the coordinates of live cells.  Each live cell has its own
+line.  =x= and =y= are separated by a space.  For example the first
+pattern could be formatted as:
+
+#+BEGIN_HTML
+<div class="demo2">
+#+END_HTML
+
+#+BEGIN_EXAMPLE
+1 1
+1 4
+4 1
+4 4
+#+END_EXAMPLE
+
+#+BEGIN_HTML
+</div>
+#+END_HTML
+
+/Note that the offset of all coordinates does not matter, adding 1 or
+subtracting 2 from all coordinates still gives the same pattern./
+
+* Implementation
+
+The universe for the Game of Life is an /*infinite*/ square.  For
+still patterns and oscillators, this is no problem.  They take
+constant space.  But there are many patterns that are moving in a
+certain direction, such as gliders, and patterns that are exploding or
+exhibit chaotic characteristic.  Thus simulating the universe is a big
+problem.
+
+Generally there are two solutions:
+
+- bounded universe :: The size of the universe are fixed.  And cells
+     above the boundaries are omitted.
+- wrapped universe :: The size of the universe are fixed.  But the
+     lines are /wrapped/, i.e., the last column is adjacent to the
+     first most column, the first row is adjacent to the last row.
+     Like the last @@html:<a href="#fig3">figure</a>@@.
+
+For most gliders, they take constant space and don't explode.  So the
+viewpoint could move with them so that we only need a constant space
+for them.
+
+* Referenece
+
+1. [[http://www.mirekw.com/ca/index.html][Cellular Automata]] by /Mirek Wojtowicz/.
+2. [[http://www.argentum.freeserve.co.uk/lex.htm][Life Lexicon]] by /Stephen Silver/.
+3. [[http://www.conwaylife.com/][Conway's Life]] by /Golly development group/.
+4. [[https://github.com/gongzhitaao/lifejs][Lifejs]] by /me/.
+
+#  LocalWords:  javascript src js stylesheet css href num toc px btn
+#  LocalWords:  Conway's orn tays un ength ncoded RLE plaintext bo OO
+#  LocalWords:  LifeWiki bobo OOO

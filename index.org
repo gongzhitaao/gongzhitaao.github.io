@@ -1,0 +1,9 @@
+#+TITLE: Zhitao Gong
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="/css/normalize.css"/>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css"/>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="/css/org.css"/>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="/css/style.css"/>
+#+OPTIONS: num:nil toc:nil
+
+[[file:game_of_life][Game of life]]
+[[file:game_of_life][file:./img/game_of_life.png]]
