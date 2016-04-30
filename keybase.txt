@@ -1,0 +1,68 @@
+==================================================================
+https://keybase.io/gongzhitaao
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://gongzhitaao.org
+  * I am gongzhitaao (https://keybase.io/gongzhitaao) on keybase.
+  * I have a public key with fingerprint 493D 59EA F22A 2603 1C3C  FD5C 8984 BD68 547A 8270
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "0101ba757ca12b0729f5bc6132999faf3c53171c3643b5807f97954e788a432ebdba0a",
+            "fingerprint": "493d59eaf22a26031c3cfd5c8984bd68547a8270",
+            "host": "keybase.io",
+            "key_id": "8984bd68547a8270",
+            "kid": "0101ba757ca12b0729f5bc6132999faf3c53171c3643b5807f97954e788a432ebdba0a",
+            "uid": "fe1e1f1224898ebbd6c68fa19e16e719",
+            "username": "gongzhitaao"
+        },
+        "service": {
+            "hostname": "gongzhitaao.org",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1462034477,
+    "expire_in": 157680000,
+    "prev": "139fd95813a0c1d1861acc37285badf5d215513fcdf499826696013be2c6932b",
+    "seqno": 3,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.53
+Comment: https://keybase.io/crypto
+
+yMIiAnicrZJbbExBGMd3lWqLoFKicesoEqo5M+c2syEuwRJBRCylsZk5Z2b3UHvW
+2dNWu6mEEJdo3HlAE5egxC31ilaausYlcU08eBKJB9LGJdFYcxqeeDQvk5nv//2+
+//fl6xySFyoKL3m6q+rJW1EXfthxoja0qvzd9Cxgrt0AIlmwgfddvMbmGT++wbFB
+BChQgYyaumlRiJhiIiJ0ZhlQRYQQQYVq6So0oaUamsp0rJiCmETXuIkx1VTEmc2o
+QkEFEE4qwb2056R8idWIauuEU4EQRYaiSoAlbN3CBGvMNrCumRQjU5GJSTcTZEhz
+jGZ4pePKP/mI99n7h/4/+67twwkOORQQIU1W5EyWtAwsKCQcGtyEJBBmuJeiG7lU
+J9xUojHp+JS6oKkCyECdY/FgtkEzf4sqXS8hCWnP9V3LrZHBpO+nI0Gu35AOxPWc
+xX9j4sxJ2XKYMqGOexnHTYEIlErLdwIu1AykqJpmmhWAb047Ho87gUI3DazIE5Th
+dRIJVSJsomOoUsWCNsQGpJalmgjrjNpCtxHUdagKyxYaIRgZBjEUqDKOLIOoiIGg
+sU0pF0RUaZMmJDLjJFLUr/U4aLrTXt0/FC4K5Q/oFyxZqKhw2J/Vu2EXhE7Re7ni
+zLjY1EMtP/MAeLFy2+FNa1q3Orn65P36R2trcMmymhlK69eG/d/br7X1grcfHkSb
+q8rjoyfNvrtj1tk9sQvxN5eiYyaXbtHjqy+fpPPmFHceudi6sfDc1a256o7auY/H
+XhhYdnlFtLR0cvfD8Jm9U9CL7LeuVhKrLOssv9L2saN75KfBPcnhzUtvf3kupg07
+8Lrre/fRfIGLt0XbcmZ3S3TiiJ65xxcPX9uYvTlo+bHtvcvC1398Hlq18FtJfoI1
+LdjX6c2EpSUPrAnZZy9jO0EiP7dwfG9s96LGAmzOPj1o3e3CvIbnFWw5eLy+reD8
+rfn44Kjxp3pWv8Lvd15r/wUN2Tmw
+=jB2L
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/gongzhitaao
+
+==================================================================
