@@ -1,2 +1,2 @@
-_site/
-old/
+build/
+node_modules/
