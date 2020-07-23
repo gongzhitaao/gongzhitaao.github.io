@@ -32,7 +32,7 @@ function reload(done) {
 }
 
 function watch() {
-  $.watch(['**/*.sass', '!node_modules/**/*'], $.series(styles, reload));
+  $.watch(['**/*.scss', '!node_modules/**/*'], $.series(styles, reload));
   $.watch(
       ['**/img/*', '!node_modules/**/*', 'CNAME', 'keybase.txt'],
       $.series(justcopy, reload));
@@ -51,9 +51,6 @@ function pages() {
       .pipe($changed('build', {extention: '.html'}))
       .pipe($plumber())
       .pipe($flatmap((stream, file) => {
-        // var hello = file.contents.toString('utf8');
-        // var contents = JSON.parse(file.contents.toString('utf8'));
-        // console.log(JSON.stringify(file.path));
         const dataFile = path.join(path.dirname(file.path), 'data.json');
         if (fs.existsSync(dataFile)) {
           return stream.pipe($mustache(dataFile, {}, {}));
@@ -74,10 +71,12 @@ function pages() {
 }
 
 function styles() {
-  return $.src(['**/*.sass', '!node_modules/**/*'])
+  return $.src(['**/*.scss', '!node_modules/**/*'])
       .pipe($changed('build', {extention: '.css'}))
       .pipe($plumber())
-      .pipe($sass().on('error', $sass.logError))
+      .pipe($sass({
+              includePaths: ['node_modules/bootstrap/scss/']
+            }).on('error', $sass.logError))
       .pipe($rename(path => {
         path.extname = '.css';
       }))
